@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
+import Contact from './components/Contact';
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,7 @@ function App() {
       <main>
         <RouterProvider router={router} />
       </main>
+      <Contact />
       <Footer />
     </div>
   );

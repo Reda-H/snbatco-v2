@@ -7,6 +7,13 @@ interface NavigationProps {
 }
 
 export default function Navigation({ isScrolled }: NavigationProps) {
+
+const navigationItems = [
+  { name: 'Expertise', href: '/about' },
+  { name: 'Projets', href: '/projects' },
+  { name: 'Services', href: '/services' },
+];
+
   const location = window.location;
   const [isOpen, setIsOpen] = useState(false);
   const backHome = location.pathname === '/' ? '#' : '/';
@@ -26,10 +33,9 @@ export default function Navigation({ isScrolled }: NavigationProps) {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           <div className="flex items-center space-x-8">
-            <a href='/about' className=" hover:text-blue-600">Expertise</a>
-            <a href='/projects' className=" hover:text-blue-600">Projets</a>
-            <a href='/services' className=" hover:text-blue-600">Services</a>
-            <a href='#contact' className=" hover:text-blue-600">Contact</a>
+            {navigationItems.map((item) => (
+              <a href={item.href} className=" hover:text-blue-600">{item.name}</a>
+            ))}
           </div>
           <a
             href="#contact"
@@ -52,10 +58,9 @@ export default function Navigation({ isScrolled }: NavigationProps) {
       {isOpen && (
         <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-lg">
           <div className="flex flex-col p-4 space-y-4">
-            <a href="#projects" className="text-gray-700 hover:text-blue-600 transition-colors">Projects</a>
-            <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-            <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
-            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+            {navigationItems.map((item) => (
+              <a href={item.href} className="text-gray-700 hover:text-blue-600 transition-colors">{item.name}</a>
+            ))}
             <a
               href="#contact"
               className="px-6 py-3 bg-blue-600 text-white rounded text-center hover:bg-blue-700 transition-colors"
