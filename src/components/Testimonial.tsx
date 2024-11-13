@@ -9,7 +9,7 @@ export default function Testimonial() {
           
           <div className="relative z-10 max-w-3xl mx-auto">
             <p className="text-xl text-gray-700 mb-8">
-              EngineerPro's innovative approach and commitment to excellence have been
+              SNBAT's innovative approach and commitment to excellence have been
               instrumental in the success of our major infrastructure projects. Their
               team's expertise and dedication are truly exceptional.
             </p>

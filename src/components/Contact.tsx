@@ -73,25 +73,29 @@ export default function Contact() {
               <div className="flex items-start">
                 <Phone className="h-5 w-5 md:h-6 md:w-6 text-blue-600 mt-1" />
                 <div className="ml-4">
-                  <h4 className="font-medium text-gray-900">Phone</h4>
-                  <p className="text-gray-600 text-sm md:text-base">+1 (555) 123-4567</p>
+                  <h4 className="font-medium text-gray-900">Téléphone</h4>
+                  <p className="text-gray-600 text-sm md:text-base underline underline-offset-2">
+                    <a href="tel:+212522982887">05 22 98 28 87</a>
+                  </p>
                 </div>
               </div>
               <div className="flex items-start">
                 <Mail className="h-5 w-5 md:h-6 md:w-6 text-blue-600 mt-1" />
                 <div className="ml-4">
                   <h4 className="font-medium text-gray-900">Email</h4>
-                  <p className="text-gray-600 text-sm md:text-base">contact@engineerpro.com</p>
+                  <p className="text-gray-600 text-sm md:text-base underline underline-offset-2">
+                    <a href="mailto:snbatsnbat01@gmail.com">snbatsnbat01@gmail.com</a>
+                  </p>
                 </div>
               </div>
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 md:h-6 md:w-6 text-blue-600 mt-1" />
                 <div className="ml-4">
-                  <h4 className="font-medium text-gray-900">Office</h4>
+                  <h4 className="font-medium text-gray-900">Adresse</h4>
                   <p className="text-gray-600 text-sm md:text-base">
-                    123 Innovation Drive<br />
-                    Tech City, TC 12345<br />
-                    United States
+                    59 Bd Zerktouni, 3éme étage N°8,<br />
+                    Casablanca<br />
+                    Maroc
                   </p>
                 </div>
               </div>
@@ -100,9 +104,14 @@ export default function Contact() {
             <div className="mt-8">
               <h4 className="font-medium text-gray-900 mb-4">Business Hours</h4>
               <div className="space-y-2 text-gray-600 text-sm md:text-base">
-                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                <p>Saturday: 10:00 AM - 2:00 PM</p>
-                <p>Sunday: Closed</p>
+                <div className="flex flex-row">
+                  <p className="min-w-[140px]">Lundi - Vendredi:</p>
+                  <p>8:30 - 17:30</p>
+                </div>
+                <div className="flex flex-row">
+                  <p className="min-w-[140px]">Samedi - Dimanche:</p>
+                  <p>Fermé</p>
+                </div>
               </div>
             </div>
           </div>

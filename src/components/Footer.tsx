@@ -9,10 +9,10 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <Building2 className="h-8 w-8 text-blue-500" />
-              <span className="text-xl font-bold">EngineerPro</span>
+              <span className="text-xl font-bold">SNBAT</span>
             </div>
             <p className="text-gray-400">
-              Leading the way in innovative engineering solutions for a sustainable future.
+              Batir l'avenir avec innovation et expertise.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -112,7 +112,7 @@ export default function Footer() {
         <div className="max-w-[90vw] mx-auto py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 EngineerPro. All rights reserved.
+              © 2024 SNBAT. Tous droits réservés.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
