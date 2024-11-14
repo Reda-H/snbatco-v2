@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Mail, Linkedin, GraduationCap } from 'lucide-react';
 import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
 
 interface TeamMember {
   name: string;

@@ -26,10 +26,10 @@ export default function Projects() {
     <section id="projects" className="section-padding bg-gray-50">
       <div className="section-container">
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="font-bold text-gray-900 mb-3 md:mb-4">Featured Projects</h2>
+          <h2 className="font-bold text-gray-900 mb-3 md:mb-4">Projets en cours</h2>
           <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
-            Discover our most innovative and impactful engineering projects that
-            showcase our expertise and commitment to excellence.
+            Découvrez nos projets les plus innovants et les plus impactants qui
+            mettent en valeur notre expertise et notre engagement pour la qualité.
           </p>
         </div>
         
