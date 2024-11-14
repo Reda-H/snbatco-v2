@@ -19,7 +19,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding">
+    <section id="contact" className="section-padding scroll-mt-20">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
           {/* Contact Form */}
