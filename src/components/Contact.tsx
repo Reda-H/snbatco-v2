@@ -1,47 +1,67 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const serviceId = import.meta.env.VITE_SERVICE_ID;
+    const templateId = import.meta.env.VITE_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+    console.log({ serviceId, templateId, target: e.currentTarget, publicKey });
+
+    emailjs.sendForm(serviceId, templateId, e.currentTarget, publicKey)
+      .then((result) => {
+        console.log('SUCCESS!', result.status, result.text);
+      }, (error) => {
+        console.log('FAILED!', error);
+      });
+  };
+
   return (
     <section id="contact" className="section-padding">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <h2 className="font-bold text-gray-900 mb-6 md:mb-8">Get in Touch</h2>
-            <form className="space-y-4 md:space-y-6">
+            <h2 className="font-bold text-gray-900 mb-6 md:mb-8">Contactez-nous</h2>
+            <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Name
+                  <label htmlFor="from_name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Nom / Société
                   </label>
                   <input
                     type="text"
-                    id="name"
+                    id="from_name"
+                    name="from_name"
                     className="w-full px-3 md:px-4 py-2 md:py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Your name"
+                    placeholder="Votre nom / Société"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="from_email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email
                   </label>
                   <input
                     type="email"
-                    id="email"
+                    id="from_email"
+                    name="from_email"
                     className="w-full px-3 md:px-4 py-2 md:py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="your@email.com"
+                    placeholder="votre@email.com"
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                  Subject
+                <label htmlFor="from_subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  Sujet
                 </label>
                 <input
                   type="text"
-                  id="subject"
+                  id="from_subject"
+                  name="from_subject"
                   className="w-full px-3 md:px-4 py-2 md:py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="How can we help?"
+                  placeholder="Quel est votre sujet?"
                 />
               </div>
               <div>
@@ -51,15 +71,16 @@ export default function Contact() {
                 <textarea
                   id="message"
                   rows={6}
+                  name="message"
                   className="w-full px-3 md:px-4 py-2 md:py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Your message"
+                  placeholder="Votre message"
                 ></textarea>
               </div>
               <button
                 type="submit"
                 className="w-full btn btn-primary"
               >
-                Send Message
+                J'envoie
               </button>
             </form>
           </div>
@@ -74,7 +95,7 @@ export default function Contact() {
                 <Phone className="h-5 w-5 md:h-6 md:w-6 text-blue-600 mt-1" />
                 <div className="ml-4">
                   <h4 className="font-medium text-gray-900">Téléphone</h4>
-                  <p className="text-gray-600 text-sm md:text-base underline underline-offset-2">
+                  <p className="text-gray-600 text-md md:text-base underline underline-offset-2">
                     <a href="tel:+212522982887">05 22 98 28 87</a>
                   </p>
                 </div>
@@ -83,7 +104,7 @@ export default function Contact() {
                 <Mail className="h-5 w-5 md:h-6 md:w-6 text-blue-600 mt-1" />
                 <div className="ml-4">
                   <h4 className="font-medium text-gray-900">Email</h4>
-                  <p className="text-gray-600 text-sm md:text-base underline underline-offset-2">
+                  <p className="text-gray-600 text-md md:text-base underline underline-offset-2">
                     <a href="mailto:snbatsnbat01@gmail.com">snbatsnbat01@gmail.com</a>
                   </p>
                 </div>
