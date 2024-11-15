@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
   { path: '/about', element: <About /> },
+  { path: '*', element: <div>404</div> }
 ]);
 
 function App() {
